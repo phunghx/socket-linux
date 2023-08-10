@@ -7,13 +7,12 @@ common_opts="--quiet"
 
 do_start(){
     start-stop-daemon -S  $DAEMON
-    ;;
 }
 
 do_stop(){
     opt=${@:-}
     start-stop-daemon -K -n --signal $STOP_SIGNAL
-    ;;
+    
 }
 
 do_status(){
