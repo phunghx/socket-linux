@@ -6,13 +6,14 @@ STOP_SIGNAL=SIGTERM
 common_opts="--quiet"
 
 do_start(){
-    start-stop-daemon --start $common_opts --make-pidfile --background --startas \
-        /bin/sh -- -c "exec $DAEMON $DAEMON_ARGS"
+    start-stop-daemon -S -n $DAEMON $DAEMON_ARGS
+    ;;
 }
 
 do_stop(){
     opt=${@:-}
-    start-stop-daemon --stop $common_opts --signal $STOP_SIGNAL --oknodo $opt --remove-pidfile
+    start-stop-daemon -K -n --signal $STOP_SIGNAL
+    ;;
 }
 
 do_status(){
@@ -59,4 +60,3 @@ case "$1" in
         exit 1
 esac
 
-exit 0
