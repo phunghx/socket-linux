@@ -148,10 +148,10 @@ int main(int argc, char* argv[])
 {
     pid_t process_id = 0;
     pid_t sid = 0;
-    if (argc <=1)  {
-        runsocket();
-        return 1;
-    }
+    //if (argc <=1)  {
+    //    runsocket();
+    //    return 1;
+    //}
     // Create child process
     process_id = fork();
     if (process_id < 0)

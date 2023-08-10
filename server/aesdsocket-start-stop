@@ -6,7 +6,7 @@ STOP_SIGNAL=SIGTERM
 common_opts="--quiet"
 
 do_start(){
-    start-stop-daemon -S -n $DAEMON $DAEMON_ARGS
+    start-stop-daemon -S  $DAEMON
     ;;
 }
 
